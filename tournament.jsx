@@ -185,6 +185,7 @@ function ScoreInput({ score, onSave, admin }) {
   const commit = (h, a) => {
     const hn = parseInt(h), an = parseInt(a);
     if (!isNaN(hn) && !isNaN(an)) onSave(`${hn} - ${an}`);
+    else if (h === "" && a === "") onSave("-");
   };
 
   const inputStyle = {
